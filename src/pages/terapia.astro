@@ -1,0 +1,135 @@
+---
+import Basiclayout from "../layouts/basiclayout.astro"
+import PageTitle from "../components/pageTitle.astro"
+import DoubleCta from "../components/doubleCta.astro"
+
+import CardBlock from '../components/cardBlock.astro'
+
+const cardsTerapy = [
+    { title: "I primi colloqui", text: "Sono dedicati alla conoscenza reciproca: ascolto la storia della persona, la motivazione che l’ha portata a chiedere supporto e insieme esploriamo la difficoltà attuale. Questo momento iniziale è fondamentale per costruire una buona alleanza terapeutica e per comprendere a fondo il problema, andando oltre i sintomi."},
+    { title: "Fase iniziale", text: "Definiamo anche gli obiettivi del percorso: si tratta di un lavoro condiviso, dove sia io che la persona ci impegniamo a chiarire che cosa vogliamo ottenere dal percorso terapeutico e in che direzione muoverci. Ogni obiettivo è pensato su misura, in base ai bisogni, alle risorse e al momento di vita di chi ho di fronte."},
+    { title: "Sedute successive", text: "Nelle sedute successive, iniziamo un lavoro più approfondito, attraverso il dialogo, strumenti tipici dell’approccio cognitivo-comportamentale (come diari, schede di monitoraggio, tecniche di ristrutturazione del pensiero) e attività da sperimentare anche tra una seduta e l’altra, se utili."},
+    { title: "Obiettivo", text: "Il mio obiettivo è quello di accompagnare la persona nel comprendere meglio sé stessa, nel superare le difficoltà e nel ritrovare un maggiore senso di benessere e autonomia nella propria vita quotidiana."},
+]
+---
+
+<Basiclayout>
+
+    <PageTitle title="Approccio cognitivo comportamentale"/>
+
+    <div class="basic-par">
+        <p>
+            Nel mio lavoro come psicologa, seguo principalmente l’approccio cognitivo-comportamentale, uno dei più efficaci e supportati dalla ricerca scientifica.
+Questo metodo si basa sull’idea che pensieri, emozioni e comportamenti siano profondamente interconnessi. Spesso, il nostro malessere non deriva tanto dalle situazioni che viviamo, quanto dal significato che attribuiamo a queste esperienze. La terapia cognitivo-comportamentale aiuta a riconoscere e ristrutturare pensieri disfunzionali, per favorire modalità più utili e sane di affrontare le difficoltà.
+È un approccio concreto, attivo e orientato al cambiamento, che si rivela particolarmente efficace nel trattamento di ansia, depressione, stress, difficoltà relazionali e molto altro.
+Accanto agli strumenti e alle tecniche specifiche, attribuisco grande valore all’alleanza terapeutica: la relazione che si costruisce tra terapeuta e paziente è per me una risorsa fondamentale. Credo in uno spazio accogliente, autentico e non giudicante, dove sentirsi ascoltati e sostenuti diventa il punto di partenza per ogni cambiamento.
+In sintesi, l’approccio cognitivo-comportamentale aiuta le persone a spezzare il circolo vizioso tra pensieri distorti, emozioni negative e comportamenti disfunzionali. Lavoriamo insieme per identificare e modificare questi schemi, promuovendo cambiamenti reali e duraturi nel benessere emotivo.
+        </p>
+    </div>
+
+
+    <div class="container">
+        <h2>Come si svolgono le sedute</h2>
+    </div>
+    <CardBlock cards={cardsTerapy} />
+    <div class="container">
+        <a href="" class="btn-primary">scopri di più</a>
+    </div>
+
+    <!-- FaQ -->
+     <section>
+        <div class="container faq">
+            <h2>Domande frequenti</h2>
+            <details name="my-accordion">
+                <summary>Andare dallo psicologo significa essere deboli o avere un problema grave?</summary>
+                <p>Assolutamente no. Rivolgersi a uno psicologo non è segno di debolezza, ma di consapevolezza e coraggio.
+                    Significa prendersi cura di sé, proprio come si fa quando ci si rivolge a un medico per un dolore fisico.
+                    Molte persone si rivolgono a uno psicologo per affrontare momenti di confusione, blocchi emotivi o cambiamenti di vita,
+                    anche senza una “patologia”. Il supporto psicologico serve proprio per prevenire, comprendere e trasformare.</p>
+              </details>
+        
+              <details name="my-accordion">
+                <summary>E se non so da dove cominciare a raccontare?</summary>
+                <p>Non c’è un modo giusto o sbagliato per iniziare. Il mio compito è accompagnarti, senza forzature, aiutandoti a dare forma
+                    a ciò che senti. A volte si inizia da un episodio recente, da un malessere generale, da una frase detta da qualcuno…
+                    L’importante è iniziare. Insieme costruiremo uno spazio in cui potrai sentirti accolto/a anche nei silenzi o nelle
+                    incertezze.</p>
+              </details>
+        </div>
+     </section>
+    
+
+
+    <DoubleCta />
+</Basiclayout>
+
+<style>
+    .basic-par {
+        max-width: 500px;
+        text-align: justify;
+        margin-inline: auto;
+        margin-block: 3em;
+    }
+
+    .faq {
+        margin-block: 3em;
+    }
+
+    .faq h2 {
+        margin-bottom: 1em;
+    }
+
+    .faq p {
+        width: 80%;
+        max-width: 80%;
+        margin-block: 2em;
+    }
+
+    details {
+  
+	&[open] summary::after {
+		rotate: -180deg;
+	}
+  
+  summary {
+    /* Override default "display: list-item" and position the summary text as well as the custom arrow icon */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    
+    /* General styling */
+    background-color: var(--clr-secondary-light);
+    color: var(--clr-accent);
+    cursor: pointer;
+    font-weight: 500;
+    margin-block-end: 0.5rem;
+    padding: 1em;
+    font-size: 2rem;
+    
+		/* Fallback code to hide standard marker, especially on Safari */
+		&::marker,
+		&::-webkit-details-marker {
+			display: none;
+		}
+    
+    &::after {
+      /* CSS for chevron shape from https://css-shape.com/chevron/ */
+      --shape-chevron-width: 1rem;
+      --s: calc(var(--shape-chevron-width) / 4);
+
+      /* Styling */
+      content: "";
+      aspect-ratio: 7/5;
+      background: currentColor;
+      clip-path: polygon(0 0, 0 var(--s), 50% 100%, 100% var(--s), 100% 0, 50% calc(100% - var(--s)));
+      flex-shrink: 0;
+      width: var(--shape-chevron-width);
+      
+      /* Animation */
+			rotate: 0deg;
+			transition: rotate 0.35s ease;
+    }
+  }
+}
+</style>

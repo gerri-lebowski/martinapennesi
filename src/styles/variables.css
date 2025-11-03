@@ -1,0 +1,21 @@
+:root {
+    
+    --clr-primary: #000;
+    --clr-secondary: #E7D9CB;
+    --clr-secondary-light: hsl(30 36% 85% / 0.3);
+    --clr-accent: #8F1231;
+    --clr-white: #fff;
+
+    
+    --font-primary: 'Lora', serif;
+    --font-secondary: 'Karla', sans-serif;
+
+    /* body font size */
+    --text-base: 1.6rem;
+
+    /* Border radius */
+    --border-radius-sm: 0.4rem; 
+    --border-radius-md: 0.8rem; 
+    --border-radius-lg: 1.6rem; 
+
+}

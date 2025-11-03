@@ -1,0 +1,129 @@
+---
+import Basiclayout from "../layouts/basiclayout.astro"
+import PageTitle from "../components/pageTitle.astro"
+import DoubleCta from "../components/doubleCta.astro"
+---
+
+<Basiclayout>
+    <PageTitle title="Chi sono"/>
+
+    <div class="chisono-intro">
+        <p>
+            Mi chiamo Martina Pennesi, sono una psicologa clinica e attualmente mi sto specializzando in psicoterapia cognitivo-comportamentale a orientamento integrato.
+Fin da piccola ho sentito un forte interesse per l’ascolto, la comprensione delle emozioni e il mondo interno delle persone. Crescendo, questo interesse si è trasformato in una vera e propria vocazione: essere psicologa non è solo il mio lavoro, ma ciò in cui credo profondamente.
+Il mio interesse per l’essere umano e per le sue dinamiche interne è nato molto presto. Dopo aver frequentato il Liceo delle Scienze Umane di Pesaro, ho deciso di proseguire il mio percorso di studi presso l’Università degli Studi di Urbino "Carlo Bo", dove mi sono laureata in Psicologia Clinica.
+Durante il mio tirocinio annuale presso il Dipartimento Dipendenze Patologiche di Pesaro, ho avuto l’opportunità di confrontarmi con realtà complesse, fragili ma anche estremamente ricche dal punto di vista umano. È stata un’esperienza intensa e preziosa, che ha rafforzato la mia convinzione sull’importanza di un approccio rispettoso, competente e autentico nel lavoro psicologico.
+        </p>
+    </div>
+
+    <div class="chisono-intro-box">
+        Dopo aver conseguito l’abilitazione all’esercizio della professione con quasi il massimo del punteggio (180/200), mi sono iscritta all’Ordine degli Psicologi e ho continuato a investire nella mia formazione professionale e personale.
+Attualmente sto frequentando una scuola di specializzazione in psicoterapia cognitivo-comportamentale integrata, un modello che coniuga efficacia clinica e profonda attenzione alla persona nella sua interezza. Questo approccio mi consente di adattare l’intervento terapeutico alle esigenze specifiche di chi ho di fronte, valorizzando le risorse individuali e promuovendo un cambiamento reale e sostenibile.
+
+    </div>
+
+    <div class="container accompagnare">
+        <h2>accompagnare</h2>
+        <p>Per me accompagnare le persone nei loro momenti difficili significa offrire uno spazio sicuro, autentico e privo di giudizio, 
+            dove potersi raccontare, 
+            sentire accolti e iniziare – con i propri tempi – un percorso di consapevolezza e cambiamento.
+            Amo il mio lavoro perché mi permette ogni giorno di entrare in punta di piedi nelle storie delle persone, con rispetto, delicatezza e impegno.
+            Essere psicologa per me non è solo un mestiere, ma una vocazione. Ogni giorno ho la possibilità di entrare in contatto con le emozioni, le paure e le speranze delle persone, 
+            e di accompagnarle nel loro percorso di consapevolezza e crescita. Il mio lavoro ha un grande valore sia per me che per chi si affida a me: è uno scambio profondo, basato su fiducia, 
+            rispetto e autenticità.</p>
+    </div>
+
+    <div class="container services">
+        <div class="services__text">
+            <h2>di cosa mi occupo</h2>
+            <p>Nel mio lavoro mi occupo di diverse forme di disagio psicologico, offrendo percorsi personalizzati per affrontare
+                difficoltà emotive, relazionali e comportamentali. Ogni persona è unica, e per questo ogni percorso viene costruito
+                insieme, in base alle specifiche esigenze e risorse individuali.</p>
+        </div>
+
+        <div class="services__cards">
+            <div class="services__card"><h3>Disturbi d'ansia</h3></div>
+            <div class="services__card"><h3>Attacchi di panico e fobie specifiche</h3></div>
+            <div class="services__card"><h3>Disturbo ossessivo compulsivo</h3></div>
+            <div class="services__card"><h3>Depressione e disturbi dell'uomore</h3></div>
+            <div class="services__card"><h3>Disturbi del comportamento alimentare
+                e difficoltà nella regolazione emotiva</h3></div>
+            <div class="services__card"><h3>Crescita personale e sviluppo dell’autostima </h3></div>
+            <div class="services__card"><h3>Difficoltà relazionali (familiari, sentimentali, sociali)</h3></div>
+        </div>
+    </div>
+
+    <div class="chisono-intro">
+        <p>
+            Il mio impegno è quello di costruire, insieme alla persona, un percorso condiviso, dove la relazione terapeutica rappresenta il punto di partenza e di forza per affrontare le difficoltà e riattivare il proprio potenziale.
+Nel mio lavoro metto al centro la persona, con la sua storia, i suoi bisogni e le sue risorse. Ogni percorso è unico e costruito insieme, passo dopo passo. Credo in una psicologia pratica e concreta, ma allo stesso tempo profondamente umana e rispettosa dei tempi individuali.
+Offro percorsi di terapia individuale, di coppia e familiare, in un contesto che mira a essere uno spazio sicuro di ascolto, confronto e crescita. Lavoro con adulti, adolescenti e bambini, adattando modalità e strumenti in base all’età, alla fase di vita e alle caratteristiche specifiche di ogni persona o sistema familiare.
+        </p>
+    </div>
+
+    <DoubleCta/>
+
+</Basiclayout>
+
+<style>
+    .chisono-intro {
+        max-width: 500px;
+        text-align: justify;
+        margin-inline: auto;
+        margin-block: 3em;
+    }
+
+    .chisono-intro-box {
+        max-width: 500px;
+        text-align: justify;
+        margin-inline: auto;
+        margin-bottom: 3em;
+        padding: 2em;
+        background: var(--clr-accent);
+        color: #fff;
+    }
+
+    .accompagnare {
+        background-image: url(/public/images/accompagnare-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-inline: auto;
+        border-radius: 8px;
+        padding: 4em 2em;
+    }
+
+    .accompagnare > * {
+        max-width: 500px;
+        margin-inline: auto;
+        color: #fff;
+}
+
+.services__text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-block: 3em;
+}
+.services__cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 1em;
+    padding: 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.services__card {
+    padding: 24px;
+    background: var(--clr-secondary-light);
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+</style>

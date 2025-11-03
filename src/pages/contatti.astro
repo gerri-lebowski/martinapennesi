@@ -1,0 +1,123 @@
+---
+import Basiclayout from "../layouts/basiclayout.astro"
+import PageTitle from "../components/pageTitle.astro"
+---
+
+<Basiclayout>
+    <PageTitle title="Contatti"/>
+
+    <div class="basic-par">
+        <p>Svolgo colloqui a Pesaro, sia
+
+            <ul>
+               <li>In presenza, presso lo studio in Via Mengoli n. 33</li> 
+              <li>Online, tramite piattaforme sicure e facili da utilizzare</li>
+            </ul>
+            
+        In situazioni particolari, in cui la persona fosse impossibilitata a raggiungere lo studio (ad esempio per difficoltà motorie o psicologiche), oppure nel caso di esposizione graduale a situazioni fobiche (come agorafobia, fobia sociale, ecc.), mi rendo disponibile a raggiungere la persona presso il domicilio o in luoghi concordati, nel rispetto di quanto previsto dal percorso terapeutico.
+    </p>
+    </div>
+
+    <div class="container form">
+        <h2>Compila il modulo qui sotto per ricevere informazioni</h2>
+        <h3>Come posso esserti utile?</h3>
+
+        <form class="contact-form" action="https://formspree.io/f/xrbokyav" method="POST">
+            <div class="field-group">
+                <label for="nome">Nome</label>
+                <input
+                    class="field"
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    placeholder="Scrivi il tuo nome..."
+                />
+            </div>
+
+            <div class="field-group">
+                <label for="telefono">Telefono</label>
+                <input
+                    class="field"
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="Scrivi il tuo numero di telefono..."
+                />
+            </div>
+
+            <div class="field-group">
+                <label for="messaggio">Questo spazio è per te: condividi ciò che desideri.</label>
+                <textarea
+                    class="field textarea"
+                    id="messaggio"
+                    name="messaggio"
+                    placeholder="Scrivi qui..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Invia</button>
+        </form>
+    </div>
+
+
+    <style>
+        .basic-par {
+        max-width: 500px;
+        text-align: justify;
+        margin-inline: auto;
+        margin-block: 3em;
+        font-family: var(--font-secondary);
+        }
+
+        .basic-par ul { margin-block: 1em; }
+
+        .form { max-width: 500px; text-align: center; }
+
+        /* Contact form styles */
+        .contact-form { text-align: left; }
+
+        .field-group { margin-block: 1.25rem 1.75rem; }
+
+        .contact-form label {
+            display: block;
+            font-family: var(--font-secondary);
+            font-size: 1.35rem;
+            color: #7d0f24; /* deep burgundy for headings */
+            margin-bottom: 0.5rem;
+        }
+
+        .field {
+            width: 100%;
+            background: #f7efec; /* light rose background */
+            border: 2px solid #a21d33; /* burgundy border */
+            border-radius: 12px;
+            padding: 1rem 1rem;
+            font-size: 1.05rem;
+            color: #4a2124;
+            outline: none;
+            font-family: var(--font-secondary);
+        }
+
+        .field::placeholder { color: #b58e84; font-style: italic; }
+
+        .textarea { min-height: 220px; resize: vertical; }
+
+        .submit-btn {
+            width: 100%;
+            background: #8f1d33;
+            color: #fff;
+            border: 2px solid #8f1d33;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-secondary);
+        }
+
+        .submit-btn:hover { filter: brightness(0.95); }
+        
+    </style>
+
+</Basiclayout>

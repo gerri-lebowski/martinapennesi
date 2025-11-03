@@ -1,0 +1,29 @@
+---
+import Nav from './nav.astro';
+import Logo from './logo.astro';
+import Cta from './cta.astro'
+---
+
+<header class="header">
+
+	<div class="container header-wrap">
+		<Logo />
+		<Nav />
+		<Cta />
+	</div>	
+
+</header>
+
+<style>
+	.header { background: var(--clr-secondary);}
+	.header-wrap {
+		display: grid; 
+		grid-template-columns: 1fr 2fr 1fr;
+		padding: 1em;
+		justify-items: stretch;
+		align-items: center;
+	}
+
+	
+
+</style>

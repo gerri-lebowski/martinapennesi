@@ -1,0 +1,3 @@
+== Project plan == 
+
+01. The project will use Astro and simple css.

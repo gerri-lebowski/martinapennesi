@@ -1,0 +1,33 @@
+---
+import '../styles/globals.css';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+  href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  rel="stylesheet"
+/>
+	
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+

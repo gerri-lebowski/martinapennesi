@@ -1,0 +1,45 @@
+---
+/* Componente parametrico Card riutilizzabile */
+
+interface Card {
+    title: string
+    text: string
+}
+
+const { cards } = Astro.props as { cards: Card[] }
+
+---
+
+<section>
+    <div class="container cards">
+
+        {cards.map(card =>( 
+            <div class="card">
+            <h3 class="card__title">{card.title}</h3>
+            <p class="card__text">{card.text}</p>
+        </div>
+    ))}
+    
+</div>
+</section>
+
+<style>
+    .cards {
+        display: flex;
+        padding: 4em 0;
+        gap: 1em;
+        flex-wrap: wrap;
+        
+    }
+
+    .card {
+        background-color: var(--clr-secondary-light);
+        padding: 24px;
+        flex: 0 0 calc(50% - 1em);
+        @media(max-width: 768px) {
+            flex: 0 0 100%;   
+        }
+        
+        
+    }
+</style>

@@ -1,0 +1,32 @@
+---
+import BasicLayout from '../layouts/basiclayout.astro'
+import Hero from '../components/hero.astro'
+import About from '../components/aboutHome.astro'
+
+import CardBlock from '../components/cardBlock.astro'
+
+const cardsHome = [
+    { title: "Percorso su misura", text: "Per affrontare ansia, depressione, disturbi ossessivi e alimentari, e difficoltà emotive e relazionali."},
+    { title: "Accanto a te", text: "Per attacchi di panico, fobie e regolazione emotiva"},
+    { title: "Massima flessibilità", text: "Adatta modalità e strumenti in base all'età, fase di vita e caratteristiche specifiche della persona o famiglia"},
+    { title: "Riscopri la tua forza", text: "Riattiva il potenziale individuale attraverso una solida relazione terapeutica"},
+]
+
+import DoubleCta from '../components/doubleCta.astro'
+---
+
+<BasicLayout>
+    <Hero></Hero>
+    <About></About>
+
+    <div class="container mt-lg">
+        <h2>Benefici della terapia cognitivo comportamentale</h2>
+    </div>
+    <CardBlock cards={cardsHome} />
+    <div class="container">
+        <button class="btn-primary">scopri di più</button>
+    </div>
+
+    <DoubleCta />
+</BasicLayout>
+

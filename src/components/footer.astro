@@ -1,0 +1,67 @@
+--- 
+
+---
+
+<footer>
+    <div class="container footer">
+        <div>
+            <img src="/public/images/martina-pennesi-logo.png" alt="" class="footer-logo">
+            <p>Via Annibale Mengoli,<br>33, 61122 Pesaro PU</p>
+        </div>
+
+        <div>
+            <h3>Sitemap</h3>
+            <ul class="footer-sitemap">
+                <li><a href="">Home</a></li>
+                <li><a href="">Chi sono</a></li>
+                <li><a href="">Terapia</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Link utili</h3>
+            <ul class="footer-links">
+                <li><a href="">Cookie policy</a></li>
+                <li><a href="">Privacy policy</a></li>
+                <li><a href="">Credits</a></li>
+            </ul>
+        </div>
+
+        <div class="quote">
+            <h3>Un viaggio di mille miglia<br>inizia con un singolo passo</h3>
+            <p>Lao Tzu</p>
+            <a href="">Prenota una prima visita</a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        padding: 4em 0;
+        gap: 2em;
+        text-transform: uppercase;
+
+        @media(max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .footer-sitemap,
+    .footer-links {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 1em
+    }
+
+    .quote {
+        padding: 1em;
+        background: rgb(247, 216, 221);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+
+</style>

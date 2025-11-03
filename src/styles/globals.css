@@ -1,0 +1,60 @@
+@import './reset.css';
+@import './variables.css';
+@import './utilities.css';
+@import './responsive.css';
+@import './fonts.css';
+
+/* Register your custom font family and tell
+the browser where to find it. */
+
+html{
+  font-size: 62.5%;
+}
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+}
+
+h1, h2, h3, h4, h5, h6 {font-weight: 400; color: var(--clr-accent)}
+
+h1 {
+  font-size: 64px;
+  line-height: 70px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 58px;
+}
+
+h3 {
+  font-size: 40;
+  line-height: auto;
+}
+
+p {
+  max-width: 60ch;
+  font-family: var(--font-secondary);
+}
+
+a {
+  
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.btn-primary {
+  background: var(--clr-accent);
+  padding: .5em;
+  border-radius: 4px;
+  border: none;
+  color: var(--clr-white);
+  text-align: center;
+
+  min-width: 240px;
+  font-family: var(--);
+}
