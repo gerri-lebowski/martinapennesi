@@ -35,6 +35,9 @@ h3 {
 p {
   max-width: 60ch;
   font-family: var(--font-secondary);
+  @media(max-width: 991px) {
+    padding-inline: 2em;
+  }
 }
 
 .container {
