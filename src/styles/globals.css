@@ -18,18 +18,18 @@ body {
 h1, h2, h3, h4, h5, h6 {font-weight: 400; color: var(--clr-accent)}
 
 h1 {
-  font-size: 64px;
-  line-height: 70px;
+  font-size: clamp(2.4rem, 1.4rem + 3.5vw, 4.0rem);
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: 48px;
-  line-height: 58px;
+  font-size: clamp(2.0rem, 1.2rem + 2.5vw, 3.2rem);
+  line-height: 1.2;
 }
 
 h3 {
-  font-size: 40;
-  line-height: auto;
+  font-size: clamp(1.8rem, 1.0rem + 1.6vw, 2.4rem);
+  line-height: 1.25;
 }
 
 p {
@@ -37,13 +37,11 @@ p {
   font-family: var(--font-secondary);
 }
 
-a {
-  
-}
-
 .container {
-  width: 90%;
-  max-width: 1280px;
+  /* Center content and create fluid side gutters */
+  --container-max: 1200px;
+  --gutter: 2rem;
+  width: min(100% - var(--gutter) * 2, var(--container-max));
   margin-inline: auto;
 }
 
@@ -56,5 +54,13 @@ a {
   text-align: center;
 
   min-width: 240px;
-  font-family: var(--);
+  font-family: var(--font-secondary);
+}
+
+/* Increase gutters on larger screens to avoid tight edges */
+@media (min-width: 48rem) {
+  .container { --gutter: 3rem; }
+}
+@media (min-width: 64rem) {
+  .container { --gutter: 4rem; --container-max: 1280px; }
 }
