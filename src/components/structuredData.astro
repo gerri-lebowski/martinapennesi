@@ -1,0 +1,98 @@
+---
+const {
+	siteUrl = "https://martinapennesi.com",
+	pageType = "WebPage"
+} = Astro.props;
+
+// LocalBusiness schema for the practice
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "MedicalBusiness",
+	"name": "Martina Pennesi - Nutrizionista e Psicologa",
+	"description": "Studio di psicologia e nutrizione a Pesaro. Specializzata in terapia cognitivo-comportamentale per ansia, depressione, disturbi alimentari e difficoltà emotive.",
+	"image": `${siteUrl}/images/martina-pennesi.jpg`,
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Via Annibale Mengoli, 33",
+		"addressLocality": "Pesaro",
+		"addressRegion": "PU",
+		"postalCode": "61122",
+		"addressCountry": "IT"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "43.9101",
+		"longitude": "12.9133"
+	},
+	"url": siteUrl,
+	"telephone": "",
+	"priceRange": "$$",
+	"openingHoursSpecification": {
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": [
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday"
+		],
+		"opens": "09:00",
+		"closes": "19:00"
+	}
+};
+
+// Person schema for Martina Pennesi
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Martina Pennesi",
+	"jobTitle": "Psicologa Clinica e Nutrizionista",
+	"description": "Psicologa clinica e nutrizionista a Pesaro, specializzata in terapia cognitivo-comportamentale integrata.",
+	"image": `${siteUrl}/images/martina-pennesi.jpg`,
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Pesaro",
+		"addressRegion": "PU",
+		"addressCountry": "IT"
+	},
+	"alumniOf": {
+		"@type": "EducationalOrganization",
+		"name": "Università degli Studi di Urbino Carlo Bo"
+	},
+	"knowsAbout": [
+		"Psicologia Clinica",
+		"Terapia Cognitivo-Comportamentale",
+		"Nutrizione",
+		"Disturbi d'ansia",
+		"Depressione",
+		"Disturbi alimentari"
+	]
+};
+
+// ProfessionalService schema
+const professionalServiceSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Terapia Cognitivo-Comportamentale - Martina Pennesi",
+	"description": "Servizi di psicoterapia e consulenza psicologica a Pesaro",
+	"provider": {
+		"@type": "Person",
+		"name": "Martina Pennesi"
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Pesaro"
+	},
+	"serviceType": [
+		"Psicoterapia",
+		"Consulenza Psicologica",
+		"Terapia Cognitivo-Comportamentale",
+		"Consulenza Nutrizionale"
+	]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />
+

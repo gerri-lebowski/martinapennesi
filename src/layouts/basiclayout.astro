@@ -2,11 +2,23 @@
 import '../styles/globals.css';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
-const { title } = Astro.props;
+import StructuredData from '../components/structuredData.astro';
+
+const {
+	title = "Martina Pennesi - Nutrizionista Pesaro | Psicologa Clinica",
+	description = "Martina Pennesi, nutrizionista e psicologa clinica a Pesaro. Specializzata in terapia cognitivo-comportamentale. Percorsi personalizzati per ansia, depressione, disturbi alimentari e difficoltà emotive.",
+	keywords = "Martina Pennesi, Nutrizionista Pesaro, Psicologa Pesaro, Terapia cognitivo comportamentale Pesaro, Psicologo Pesaro, Nutrizionista Marche",
+	image = "/images/martina-pennesi.jpg",
+	url = Astro.url.href,
+	type = "website"
+} = Astro.props;
+
+const siteUrl = Astro.site?.href || url.split('/').slice(0, 3).join('/');
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="it">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +31,40 @@ const { title } = Astro.props;
 />
 	
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Martina Pennesi" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="Italian" />
+		<meta name="geo.region" content="IT-MA" />
+		<meta name="geo.placename" content="Pesaro" />
+		<meta name="geo.position" content="43.9101;12.9133" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={fullImageUrl} />
+		<meta property="og:locale" content="it_IT" />
+		<meta property="og:site_name" content="Martina Pennesi - Nutrizionista Pesaro" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={fullImageUrl} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={url} />
+		
+		<!-- Structured Data -->
+		<StructuredData siteUrl={siteUrl} />
 	</head>
 	<body>
 		<Header />
